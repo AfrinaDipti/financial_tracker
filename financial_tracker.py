@@ -394,7 +394,7 @@ class FinancialTracker:
             # Customize the chart
             plt.title("Spending by Category", pad=20, fontsize=14, fontweight='bold')
             plt.xlabel("Categories", labelpad=10, fontsize=12)
-            plt.ylabel("Amount (BDT )", labelpad=10, fontsize=12)
+            plt.ylabel("Amount (BDT)", labelpad=10, fontsize=12)
             
             # Set x-axis labels
             plt.xticks(
@@ -410,7 +410,7 @@ class FinancialTracker:
                 ax.text(
                     bar.get_x() + bar.get_width()/2.,
                     height,
-                    f'BDT{height:,.2f}',
+                    f'BDT {height:,.2f}',
                     ha='center',
                     va='bottom',
                     fontsize=10
@@ -472,7 +472,7 @@ class FinancialTracker:
             
             # Add value labels on points
             for i, v in enumerate(monthly_totals):
-                ax1.text(i, v, f'BDT{v:,.2f}', ha='center', va='bottom')
+                ax1.text(i, v, f'BDT {v:,.2f}', ha='center', va='bottom')
             
             # Category-wise monthly breakdown
             monthly_category = self.transactions.pivot_table(
