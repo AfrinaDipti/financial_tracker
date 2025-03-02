@@ -394,7 +394,7 @@ class FinancialTracker:
             # Customize the chart
             plt.title("Spending by Category", pad=20, fontsize=14, fontweight='bold')
             plt.xlabel("Categories", labelpad=10, fontsize=12)
-            plt.ylabel("Amount ($)", labelpad=10, fontsize=12)
+            plt.ylabel("Amount (BDT )", labelpad=10, fontsize=12)
             
             # Set x-axis labels
             plt.xticks(
@@ -410,7 +410,7 @@ class FinancialTracker:
                 ax.text(
                     bar.get_x() + bar.get_width()/2.,
                     height,
-                    f'${height:,.2f}',
+                    f'BDT{height:,.2f}',
                     ha='center',
                     va='bottom',
                     fontsize=10
@@ -463,7 +463,7 @@ class FinancialTracker:
             # Customize first subplot
             ax1.set_title("Monthly Spending Trend", pad=20, fontsize=12)
             ax1.set_xlabel("Month", labelpad=10)
-            ax1.set_ylabel("Total Amount ($)", labelpad=10)
+            ax1.set_ylabel("Total Amount (BDT)", labelpad=10)
             ax1.grid(True, linestyle='--', alpha=0.3)
             
             # Set x-axis labels for first subplot
@@ -472,7 +472,7 @@ class FinancialTracker:
             
             # Add value labels on points
             for i, v in enumerate(monthly_totals):
-                ax1.text(i, v, f'${v:,.2f}', ha='center', va='bottom')
+                ax1.text(i, v, f'BDT{v:,.2f}', ha='center', va='bottom')
             
             # Category-wise monthly breakdown
             monthly_category = self.transactions.pivot_table(
@@ -494,7 +494,7 @@ class FinancialTracker:
                 
                 ax2.set_title("Monthly Category Breakdown", pad=20, fontsize=12)
                 ax2.set_xlabel("Month", labelpad=10)
-                ax2.set_ylabel("Amount ($)", labelpad=10)
+                ax2.set_ylabel("Amount (BDT)", labelpad=10)
                 ax2.grid(True, axis='y', linestyle='--', alpha=0.3)
                 ax2.legend(title="Categories", bbox_to_anchor=(1.05, 1), loc='upper left')
             
